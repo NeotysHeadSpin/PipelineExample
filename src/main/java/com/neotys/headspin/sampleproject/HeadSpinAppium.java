@@ -1,9 +1,8 @@
-package com.neotys.kobiton.sampleproject;
+package com.neotys.headspin.sampleproject;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import java.util.List;
 
 import com.neotys.selenium.proxies.NLRemoteWebDriver;
 import com.neotys.selenium.proxies.NLWebDriverFactory;
@@ -12,12 +11,8 @@ import io.appium.java_client.android.AndroidDriver;
 import org.junit.Before;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -25,7 +20,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import io.appium.java_client.AppiumDriver;
 
-public class KobitonAppium {
+public class HeadSpinAppium {
 	AppiumDriver<MobileElement> wd;
 	NLRemoteWebDriver driver;
 	String openSearch = "//*[@id=\'open-search\']";
@@ -33,6 +28,16 @@ public class KobitonAppium {
 	String searchSubmit = "//*[@id=\'search-button-mobile\']";
 
 	String applicationURL="";
+
+	//{
+	//    "deviceName": "Nexus 5X",
+	//    "udid": "00ac5958dd8d9aed",
+	//    "autoAcceptAlerts": true,
+	//    "automationName": "UiAutomator2",
+	//    "appPackage": "com.android.settings",
+	//    "platformName": "Android",
+	//    "appActivity": "com.android.settings.Settings"
+	//}
 
 	@BeforeMethod @Before
 	public void beforeMethod() throws Exception {
@@ -45,17 +50,17 @@ public class KobitonAppium {
 		//A sample perfecto connect appium script to connect with a perfecto android device and perform addition validation in calculator app.
 		String browserName = "mobileOS";
 		DesiredCapabilities capabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
-		capabilities.setCapability("sessionName", "NeoLoad Demo test session");
+		capabilities.setCapability("automationName", "NeoLoad Demo test session");
 		capabilities.setCapability("sessionDescription", "");
 		capabilities.setCapability("deviceOrientation", "portrait");
 		capabilities.setCapability("captureScreenshots", true);
 		capabilities.setCapability("browserName", "chrome");
-		capabilities.setCapability("groupId", 212); // Group: Default Grou
-		capabilities.setCapability("deviceGroup", "KOBITON");
 // The given group is used for finding devices and the created session will be visible for all members within the group.
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("platformVersion", "*");
-		capabilities.setCapability("deviceName", "Galaxy*");
+		capabilities.setCapability("deviceName", "*");
+		capabilities.setCapability("headspin:capture", "true*");
+
 		boolean session=false;
 		for(int i=0;i<5;i++)
 		{
@@ -78,7 +83,7 @@ public class KobitonAppium {
 
 	public boolean createSession(Capabilities capabilities, String cloudname,String projectname) throws Exception,SessionNotCreatedException {
 		boolean result=false;
-		wd = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudname)  + "@api.kobiton.com/wd/hub"), capabilities);
+		wd = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudname)  + "wd/hub"), capabilities);
 		driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart Android", projectname);
 
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

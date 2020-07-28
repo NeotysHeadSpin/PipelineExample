@@ -10,10 +10,10 @@ pipeline {
     DOCKER_COMPOSE_TEMPLATE="$WORKSPACE/neoload/infrastructure/docker-compose.template"
     DOCKER_COMPOSE_LG_FILE = "$WORKSPACE/neoload/infrastructure/docker-compose-neoload.yml"
     KOBITONJARPATH="$WORKSPACE/target/sampleproject-0.0.1-SNAPSHOT.jar"
-    HOST="ec2-34-243-201-159.eu-west-1.compute.amazonaws.com"
+    HOST="ec2-54-170-210-154.eu-west-1.compute.amazonaws.com"
     PORT="8780"
     APPLICATIONNAME="${HOST}:${PORT}"
-    KOBITONCLOUDNAME="${env.cloudname}"
+    HEADSPINCLOUDNAME="${env.cloudname}"
     NLAPI="${env.neoload_web_API_URL}"
     KOBITONJAR="sampleproject-0.0.1-SNAPSHOT.jar"
     ARGUMENT="-Dnl.selenium.proxy.mode=EndUserExperience"
@@ -34,7 +34,7 @@ pipeline {
       steps {
 
 
-            sh "mvn -B clean package  -DapplicationURL=$APPLICATIONNAME -DcloudName=${KOBITONCLOUDNAME}"
+            sh "mvn -B clean package  -DapplicationURL=$APPLICATIONNAME -DcloudName=${HEADSPINCLOUDNAME}"
 
       }
     }
@@ -88,7 +88,7 @@ pipeline {
                               sh "sed -i 's/ARGUMENT_TO_REPLACE/${ARGUMENT}/'  $WORKSPACE/neoload/konakart/variable_neoload.yaml"
                               sh "sed -i 's/TOKEN_TO_REPLACE/${APPLICATIONNAME}/'  $WORKSPACE/neoload/konakart/variable_neoload.yaml"
                               sh "sed -i 's/IP_TO_REPLACE/${CONTROLLER}/'  $WORKSPACE/neoload/konakart/variable_neoload.yaml"
-                              sh "sed -i 's/CLOUD_TO_REPLACE/${KOBITONCLOUDNAME}/'  $WORKSPACE/neoload/konakart/variable_neoload.yaml"
+                              sh "sed -i 's/CLOUD_TO_REPLACE/${HEADSPINCLOUDNAME}/'  $WORKSPACE/neoload/konakart/variable_neoload.yaml"
 
                               sh """
                                      export PATH=~/.local/bin:$PATH

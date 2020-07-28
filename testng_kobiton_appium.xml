@@ -3,7 +3,7 @@
 <suite name="Suite" parallel="tests">
 	<test name="KobitonAppium" enabled="true">
 		<classes>
-			<class name="com.neotys.kobiton.sampleproject.KobitonAppium" />
+			<class name="com.neotys.headspin.sampleproject.HeadSpinAppium" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

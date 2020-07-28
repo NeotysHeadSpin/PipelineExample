@@ -1,4 +1,4 @@
-package com.neotys.kobiton.sampleproject;
+package com.neotys.headspin.sampleproject;
 
 
 public class Utils {

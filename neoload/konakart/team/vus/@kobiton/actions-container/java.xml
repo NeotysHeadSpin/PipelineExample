@@ -9,7 +9,7 @@ Possible parameters are:
     <custom-action-parameter name="JRE" type="TEXT" value="jre/bin/java"/>
     <custom-action-parameter name="arg5" type="TEXT" value="-cp"/>
     <custom-action-parameter name="arg6" type="TEXT" value="${NL-CustomResources}/${KobitonJar}"/>
-    <custom-action-parameter name="arg7" type="TEXT" value="com.neotys.kobiton.sampleproject.EndUserExperienceTestSuite"/>
+    <custom-action-parameter name="arg7" type="TEXT" value="com.neotys.headspin.sampleproject.EndUserExperienceTestSuite"/>
     <custom-action-parameter name="arg1" type="TEXT" value="${argument}"/>
     <custom-action-parameter name="arg2" type="TEXT" value="-DapplicationURL=${applicationURL}"/>
     <custom-action-parameter name="arg3" type="TEXT" value="-DcloudName=${cloudname}"/>

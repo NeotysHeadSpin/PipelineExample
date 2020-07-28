@@ -1,4 +1,4 @@
-package com.neotys.kobiton.sampleproject;
+package com.neotys.headspin.sampleproject;
 
 import org.junit.runner.JUnitCore;
 import org.junit.runner.RunWith;
@@ -9,7 +9,7 @@ import org.junit.runners.Suite;
     @RunWith(Suite.class)
 
     @Suite.SuiteClasses({
-            KobitonAppium.class,
+            HeadSpinAppium.class,
     })
 
     public class EndUserExperienceTestSuite {
