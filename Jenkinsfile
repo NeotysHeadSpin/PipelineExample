@@ -30,7 +30,7 @@ pipeline {
                       credentialsId :'gituser'
           }
       }
-    stage('Launch Appium Scripts on Kobiton') {
+    stage('Launch Appium Scripts on HeadSpin') {
       steps {
 
 
