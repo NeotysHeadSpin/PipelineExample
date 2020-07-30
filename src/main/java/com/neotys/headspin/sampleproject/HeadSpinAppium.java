@@ -111,8 +111,6 @@ public class HeadSpinAppium {
 		driver.startTransaction("Accessibility Assertion");
 
 
-
-
 		driver.startTransaction("Navigate to Konakart.com");
 		driver.get("http://"+applicationURL);
 		driver.stopTransaction();
