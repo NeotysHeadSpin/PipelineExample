@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.neotys.kobiton</groupId>
+	<groupId>com.neotys.headspin</groupId>
 	<artifactId>sampleproject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -14,7 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<reportium-sdk.version>RELEASE</reportium-sdk.version>
-		<testngXmlFile>testng_kobiton_appium.xml</testngXmlFile>
+		<testngXmlFile>testng_headspin_appium.xml</testngXmlFile>
 	</properties>
 
 	<dependencies>
