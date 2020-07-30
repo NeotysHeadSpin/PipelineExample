@@ -57,9 +57,21 @@ public class HeadSpinAppium {
 		capabilities.setCapability("browserName", "chrome");
 // The given group is used for finding devices and the created session will be visible for all members within the group.
 		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("platformVersion", "*");
-		capabilities.setCapability("deviceName", "*");
-		capabilities.setCapability("headspin:capture", "true*");
+
+		capabilities.setCapability("deviceName", "HD1907");
+        capabilities.setCapability("udid", "cd3aed29");
+        capabilities.setCapability("appPackage", "com.android.settings");
+		capabilities.setCapability("headspin:capture", "true");
+        capabilities.setCapability("appActivity", "com.android.settings.Settings");
+		//{
+        //    "deviceName": "HD1907",
+        //    "udid": "cd3aed29",
+        //    "autoAcceptAlerts": true,
+        //    "automationName": "UiAutomator2",
+        //    "appPackage": "com.android.settings",
+        //    "platformName": "Android",
+        //    "appActivity": "com.android.settings.Settings"
+        //}
 
 		boolean session=false;
 		for(int i=0;i<5;i++)
