@@ -19,7 +19,7 @@ pipeline {
     ARGUMENT="-Dnl.selenium.proxy.mode=EndUserExperience"
     CONTROLLER="docker-ctl1"
 
-    GROUP="NeotysKobiton"
+    GROUP="NeotysHeadSpin"
     APP_NAME="PipelineExample"
   }
   stages {
