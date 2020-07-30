@@ -111,10 +111,7 @@ public class HeadSpinAppium {
 		driver.startTransaction("Accessibility Assertion");
 
 
-		Map<String, Object> params = new HashMap<>();
-		params.put("sources", "Device");
-		params.put("interval", 4);
-		driver.executeScript("mobile:monitor:start", params);
+
 
 		driver.startTransaction("Navigate to Konakart.com");
 		driver.get("http://"+applicationURL);
@@ -171,9 +168,6 @@ public class HeadSpinAppium {
 		driver.stopTransaction();
 
 
-		//----disable vitals
-		Map<String, Object> parames = new HashMap<>();
-		driver.executeScript("mobile:monitor:stop", parames);
 
 		driver.close();
 		driver.quit();
