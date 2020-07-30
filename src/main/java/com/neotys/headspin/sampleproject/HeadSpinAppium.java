@@ -54,7 +54,7 @@ public class HeadSpinAppium {
 		capabilities.setCapability("sessionDescription", "NeoLoad test");
 		capabilities.setCapability("deviceOrientation", "portrait");
 		capabilities.setCapability("captureScreenshots", true);
-		capabilities.setCapability("browserName", "chrome");
+		capabilities.setCapability("browserName", "firefox");
 // The given group is used for finding devices and the created session will be visible for all members within the group.
 		capabilities.setCapability("platformName", "Android");
 
