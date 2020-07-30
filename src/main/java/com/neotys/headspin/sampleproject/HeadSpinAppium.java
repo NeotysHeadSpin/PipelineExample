@@ -60,9 +60,8 @@ public class HeadSpinAppium {
 
 		capabilities.setCapability("deviceName", "HD1907");
         capabilities.setCapability("udid", "cd3aed29");
-        capabilities.setCapability("appPackage", "com.android.settings");
-		capabilities.setCapability("headspin:capture", "true");
-        capabilities.setCapability("appActivity", "com.android.settings.Settings");
+      		capabilities.setCapability("headspin:capture", "true");
+
 		//{
         //    "deviceName": "HD1907",
         //    "udid": "cd3aed29",
