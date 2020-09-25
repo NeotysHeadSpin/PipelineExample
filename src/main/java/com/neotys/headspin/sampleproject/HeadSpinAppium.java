@@ -21,8 +21,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import io.appium.java_client.AppiumDriver;
 
 public class HeadSpinAppium {
-	AppiumDriver<MobileElement> wd;
-	NLRemoteWebDriver driver;
+	AppiumDriver<MobileElement> driver;
+	//NLRemoteWebDriver driver;
 	String openSearch = "//*[@id=\'open-search\']";
 	String searchField = "//*[@id=\'search-input-mobile\']";
 	String searchSubmit = "//*[@id=\'search-button-mobile\']";
@@ -84,8 +84,8 @@ public class HeadSpinAppium {
 
 	public boolean createSession(Capabilities capabilities, String cloudname,String projectname) throws Exception,SessionNotCreatedException {
 		boolean result=false;
-		wd = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudname)  + "wd/hub"), capabilities);
-		driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart Android", projectname);
+		driver = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudname)  + "wd/hub"), capabilities);
+	//	driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart Android", projectname);
 
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
@@ -98,12 +98,12 @@ public class HeadSpinAppium {
 	public void appiumTest() throws Exception {
 
 		//----enable vitals metrics---
-		driver.startTransaction("Navigate to Konakart.com");
+//		driver.startTransaction("Navigate to Konakart.com");
 		driver.get("http://"+applicationURL);
-		driver.stopTransaction();
+//		driver.stopTransaction();
 
 
-		driver.startTransaction("Search for Comptuer");
+//		driver.startTransaction("Search for Comptuer");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		WebElement element=driver.findElement(By.xpath((openSearch)));
@@ -118,10 +118,10 @@ public class HeadSpinAppium {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element=driver.findElement(By.xpath((searchSubmit)));
 		element.click();
-		driver.stopTransaction();
+//		driver.stopTransaction();
 
 
-		driver.startTransaction("Search for phone");
+		//	driver.startTransaction("Search for phone");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		element=driver.findElement(By.xpath((openSearch)));
 		element.click();
@@ -134,10 +134,10 @@ public class HeadSpinAppium {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element=driver.findElement(By.xpath((searchSubmit)));
 		element.click();
-		driver.stopTransaction();
+//		driver.stopTransaction();
 
 
-		driver.startTransaction("Search for game");
+//		driver.startTransaction("Search for game");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		element=driver.findElement(By.xpath((openSearch)));
 		element.click();
@@ -150,7 +150,7 @@ public class HeadSpinAppium {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element=driver.findElement(By.xpath((searchSubmit)));
 		element.click();
-		driver.stopTransaction();
+//		driver.stopTransaction();
 
 
 
