@@ -48,8 +48,7 @@ public class HeadSpinAppium {
 		applicationURL="<<applicationURL>>";
 		applicationURL=Utils.fetchApplicationURL(applicationURL);
 		//A sample perfecto connect appium script to connect with a perfecto android device and perform addition validation in calculator app.
-		String browserName = "mobileOS";
-		DesiredCapabilities capabilities = new DesiredCapabilities(browserName, "", Platform.ANY);
+		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("automationName", "UiAutomator2");
 		capabilities.setCapability("sessionDescription", "NeoLoad test");
 		capabilities.setCapability("deviceOrientation", "portrait");
@@ -60,7 +59,7 @@ public class HeadSpinAppium {
 		capabilities.setCapability("headspin:capture", "true");
 		capabilities.setCapability("appPackage", "com.android.chrome");
 		capabilities.setCapability("appActivity", "com.google.android.apps.chrome.Main");
-
+D
 
 
 		boolean session=false;
