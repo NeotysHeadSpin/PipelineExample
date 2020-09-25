@@ -59,7 +59,7 @@ public class HeadSpinAppium {
 		capabilities.setCapability("headspin:capture", "true");
 		capabilities.setCapability("appPackage", "com.android.chrome");
 		capabilities.setCapability("appActivity", "com.google.android.apps.chrome.Main");
-D
+
 
 
 		boolean session=false;
