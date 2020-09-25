@@ -98,9 +98,6 @@ public class HeadSpinAppium {
 	public void appiumTest() throws Exception {
 
 		//----enable vitals metrics---
-		driver.startTransaction("Accessibility Assertion");
-
-
 		driver.startTransaction("Navigate to Konakart.com");
 		driver.get("http://"+applicationURL);
 		driver.stopTransaction();
