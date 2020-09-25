@@ -21,23 +21,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import io.appium.java_client.AppiumDriver;
 
 public class HeadSpinAppium {
-	AppiumDriver<MobileElement> driver;
-	//NLRemoteWebDriver driver;
+	AppiumDriver<MobileElement> wb;
+	NLRemoteWebDriver driver;
 	String openSearch = "//*[@id=\'open-search\']";
 	String searchField = "//*[@id=\'search-input-mobile\']";
 	String searchSubmit = "//*[@id=\'search-button-mobile\']";
 
 	String applicationURL="";
 
-	//{
-	//    "deviceName": "Nexus 5X",
-	//    "udid": "00ac5958dd8d9aed",
-	//    "autoAcceptAlerts": true,
-	//    "automationName": "UiAutomator2",
-	//    "appPackage": "com.android.settings",
-	//    "platformName": "Android",
-	//    "appActivity": "com.android.settings.Settings"
-	//}
 
 	@BeforeMethod @Before
 	public void beforeMethod() throws Exception {
@@ -47,7 +38,6 @@ public class HeadSpinAppium {
 		String projectPath="";
 		applicationURL="<<applicationURL>>";
 		applicationURL=Utils.fetchApplicationURL(applicationURL);
-		//A sample perfecto connect appium script to connect with a perfecto android device and perform addition validation in calculator app.
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("automationName", "UiAutomator2");
 		capabilities.setCapability("sessionDescription", "NeoLoad test");
@@ -84,8 +74,8 @@ public class HeadSpinAppium {
 
 	public boolean createSession(Capabilities capabilities, String cloudname,String projectname) throws Exception,SessionNotCreatedException {
 		boolean result=false;
-		driver = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudname)  + "wd/hub"), capabilities);
-	//	driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart Android", projectname);
+		wb = new AndroidDriver<MobileElement>(new URL("https://" + Utils.fetchCloudName(cloudname)  + "wd/hub"), capabilities);
+		driver = (NLRemoteWebDriver) NLWebDriverFactory.newNLWebDriver(wd, "KonaKart Android", projectname);
 
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
@@ -98,12 +88,12 @@ public class HeadSpinAppium {
 	public void appiumTest() throws Exception {
 
 		//----enable vitals metrics---
-//		driver.startTransaction("Navigate to Konakart.com");
+		driver.startTransaction("Navigate to Konakart.com");
 		driver.get("http://"+applicationURL);
-//		driver.stopTransaction();
+		driver.stopTransaction();
 
 
-//		driver.startTransaction("Search for Comptuer");
+		driver.startTransaction("Search for Comptuer");
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		WebElement element=driver.findElement(By.xpath((openSearch)));
@@ -118,10 +108,10 @@ public class HeadSpinAppium {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element=driver.findElement(By.xpath((searchSubmit)));
 		element.click();
-//		driver.stopTransaction();
+		driver.stopTransaction();
 
 
-		//	driver.startTransaction("Search for phone");
+  	    driver.startTransaction("Search for phone");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		element=driver.findElement(By.xpath((openSearch)));
 		element.click();
@@ -134,10 +124,10 @@ public class HeadSpinAppium {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element=driver.findElement(By.xpath((searchSubmit)));
 		element.click();
-//		driver.stopTransaction();
+		driver.stopTransaction();
 
 
-//		driver.startTransaction("Search for game");
+		driver.startTransaction("Search for game");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(openSearch)));
 		element=driver.findElement(By.xpath((openSearch)));
 		element.click();
@@ -150,7 +140,7 @@ public class HeadSpinAppium {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(searchSubmit)));
 		element=driver.findElement(By.xpath((searchSubmit)));
 		element.click();
-//		driver.stopTransaction();
+		driver.stopTransaction();
 
 
 
