@@ -56,7 +56,7 @@ public class HeadSpinAppium {
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("deviceName", "HD1907");
         capabilities.setCapability("udid", "00ac5958dd8d9aed");
-		capabilities.setCapability("headspin:capture", "true");
+		capabilities.setCapability("headspin:capture", true);
 		capabilities.setCapability("appPackage", "com.android.chrome");
 		capabilities.setCapability("appActivity", "com.google.android.apps.chrome.Main");
 
